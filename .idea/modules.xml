@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/TransactionsImporterApp.iml" filepath="$PROJECT_DIR$/TransactionsImporterApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TransactionsParser/TransactionsParser.iml" filepath="$PROJECT_DIR$/TransactionsParser/TransactionsParser.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TransactionsPersister/TransactionsPersister.iml" filepath="$PROJECT_DIR$/TransactionsPersister/TransactionsPersister.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TransactionsProvider/TransactionsProvider.iml" filepath="$PROJECT_DIR$/TransactionsProvider/TransactionsProvider.iml" />
+    </modules>
+  </component>
+</project>
