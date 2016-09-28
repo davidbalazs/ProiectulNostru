@@ -5,10 +5,18 @@ import java.util.Date;
 
 public class Transfer extends Transaction {
 
-    Account destinationAccount;
+    private Account destinationAccount;
 
-    public Transfer(int value, Date date, String description, Account sourceAccount, Account destinationAccount) {
-        super(value, date, description, sourceAccount);
+    public Transfer(int value, Account sourceAccount, String description, Date date, Account destinationAccount) {
+        super(value, sourceAccount, description, date);
+        this.destinationAccount = destinationAccount;
+    }
+
+    public Account getDestinationAccount() {
+        return destinationAccount;
+    }
+
+    public void setDestinationAccount(Account destinationAccount) {
         this.destinationAccount = destinationAccount;
     }
 }

@@ -4,10 +4,10 @@ import java.util.Date;
 
 public class AccountOperation extends Transaction {
 
-    AccountOperationType type;
+    private AccountOperationType type;
 
-    public AccountOperation(int value, Date date, String description, Account sourceAccount, AccountOperationType type) {
-        super(value, date, description, sourceAccount);
+    public AccountOperation(int value, Account sourceAccount, String description, Date date, AccountOperationType type) {
+        super(value, sourceAccount, description, date);
         this.type = type;
     }
 

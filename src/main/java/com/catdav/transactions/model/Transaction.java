@@ -4,16 +4,16 @@ import java.util.Date;
 
 public class Transaction {
 
-    int value;
-    Date date;
-    String description;
-    Account sourceAccount;
+    private int value;
+    private Account sourceAccount;
+    private String description;
+    private Date date;
 
-    public Transaction(int value, Date date, String description, Account sourceAccount) {
+    public Transaction(int value, Account sourceAccount, String description, Date date) {
         this.value = value;
-        this.date = date;
-        this.description = description;
         this.sourceAccount = sourceAccount;
+        this.description = description;
+        this.date = date;
     }
 
     public int getValue() {
@@ -24,12 +24,12 @@ public class Transaction {
         this.value = value;
     }
 
-    public Date getDate() {
-        return date;
+    public Account getSourceAccount() {
+        return sourceAccount;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setSourceAccount(Account sourceAccount) {
+        this.sourceAccount = sourceAccount;
     }
 
     public String getDescription() {
@@ -40,11 +40,11 @@ public class Transaction {
         this.description = description;
     }
 
-    public Account getSourceAccount() {
-        return sourceAccount;
+    public Date getDate() {
+        return date;
     }
 
-    public void setSourceAccount(Account sourceAccount) {
-        this.sourceAccount = sourceAccount;
+    public void setDate(Date date) {
+        this.date = date;
     }
 }

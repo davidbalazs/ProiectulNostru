@@ -5,11 +5,11 @@ import java.util.Date;
 
 public class Spending extends Transaction{
 
-    SpendingCategory category;
-    boolean addToAverage;
+    private SpendingCategory category;
+    private boolean addToAverage;
 
-    public Spending(int value, Date date, String description, Account sourceAccount, SpendingCategory category, boolean addToAverage) {
-        super(value, date, description, sourceAccount);
+    public Spending(int value, Account sourceAccount, String description, Date date, SpendingCategory category, boolean addToAverage) {
+        super(value, sourceAccount, description, date);
         this.category = category;
         this.addToAverage = addToAverage;
     }
