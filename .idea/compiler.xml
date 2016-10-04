@@ -28,10 +28,10 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
-      <module name="TransactionsImporterApp" target="1.5" />
-      <module name="TransactionsParser" target="1.5" />
-      <module name="TransactionsPersister" target="1.5" />
-      <module name="TransactionsProvider" target="1.5" />
+      <module name="TransactionsImporterApp" target="1.7" />
+      <module name="TransactionsParser" target="1.7" />
+      <module name="TransactionsPersister" target="1.7" />
+      <module name="TransactionsProvider" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>
