@@ -1,4 +1,4 @@
-package exceptions;
+package com.catdav.transactions.exceptions;
 
 /**
  * Created by David on 10/4/2016.

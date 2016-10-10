@@ -1,4 +1,4 @@
-package exceptions;
+package com.catdav.transactions.exceptions;
 
 /**
  * Exception to be thrown when the system fails to retrieve accounts.

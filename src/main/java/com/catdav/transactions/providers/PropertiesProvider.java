@@ -1,8 +1,7 @@
-package providers;
+package com.catdav.transactions.providers;
 
-import exceptions.PropertiesRetrievalException;
+import com.catdav.transactions.exceptions.PropertiesRetrievalException;
 
-import java.io.File;
 import java.util.Properties;
 
 /**

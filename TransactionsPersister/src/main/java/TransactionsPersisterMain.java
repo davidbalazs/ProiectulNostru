@@ -1,7 +1,10 @@
 import com.catdav.transactions.model.Account;
-import com.catdavd.transactions.providers.AccountsProvider;
-import com.catdavd.transactions.providers.impl.DefaultAccountsProvider;
-import exceptions.AccountsRetrievalException;
+import com.catdav.transactions.model.TransactionsContainer;
+import com.catdav.transactions.persister.TransactionsPersister;
+import com.catdav.transactions.persister.impl.DefaultTransactionsPersister;
+import com.catdav.transactions.providers.AccountsProvider;
+import com.catdav.transactions.providers.impl.DefaultAccountsProvider;
+import com.catdav.transactions.exceptions.AccountsRetrievalException;
 
 import java.util.List;
 
@@ -11,8 +14,11 @@ import java.util.List;
  */
 public class TransactionsPersisterMain {
     public static void main(String[] args) throws AccountsRetrievalException {
-        AccountsProvider accountsProvider = new DefaultAccountsProvider();
-        List<Account> accountList = accountsProvider.getAccounts();
-        System.out.println(accountList);
+//        AccountsProvider accountsProvider = new DefaultAccountsProvider();
+//        List<Account> accountList = accountsProvider.getAccounts();
+//        System.out.println(accountList);
+
+        TransactionsPersister transactionsPersister=new DefaultTransactionsPersister();
+        transactionsPersister.persist(new TransactionsContainer());
     }
 }

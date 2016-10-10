@@ -1,4 +1,4 @@
-package exceptions;
+package com.catdav.transactions.exceptions;
 
 /**
  * Exception that should be extended by any exception thrown in TransactionsPersister module.

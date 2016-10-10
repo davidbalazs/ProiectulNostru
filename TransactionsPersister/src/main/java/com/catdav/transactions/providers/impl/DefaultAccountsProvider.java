@@ -1,19 +1,18 @@
-package com.catdavd.transactions.providers.impl;
+package com.catdav.transactions.providers.impl;
 
 import com.catdav.transactions.model.Account;
-import com.catdavd.transactions.providers.AccountsProvider;
+import com.catdav.transactions.providers.AccountsProvider;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import exceptions.AccountsRetrievalException;
-import exceptions.PropertiesRetrievalException;
+import com.catdav.transactions.exceptions.AccountsRetrievalException;
+import com.catdav.transactions.exceptions.PropertiesRetrievalException;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
-import providers.PropertiesProvider;
-import providers.impl.FilePropertiesProvider;
+import com.catdav.transactions.providers.PropertiesProvider;
 
 import java.io.IOException;
 import java.util.Arrays;

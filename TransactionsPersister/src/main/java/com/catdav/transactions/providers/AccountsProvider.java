@@ -1,7 +1,7 @@
-package com.catdavd.transactions.providers;
+package com.catdav.transactions.providers;
 
 import com.catdav.transactions.model.Account;
-import exceptions.AccountsRetrievalException;
+import com.catdav.transactions.exceptions.AccountsRetrievalException;
 
 import java.util.List;
 
