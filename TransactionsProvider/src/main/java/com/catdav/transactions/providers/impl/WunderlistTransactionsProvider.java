@@ -42,7 +42,7 @@ public class WunderlistTransactionsProvider implements TransactionsProvider {
         String accessToken = getAccessToken(properties);
         String clientId = getClientId(properties);
         HttpResponse httpResponse = sendRequest(transactionsUri, accessToken, clientId);
-        String transactionsJsonString = getJsonString(httpResponse);
+        String transactionsJsonString = getResponseBody(httpResponse);
 
         Gson gson = new GsonBuilder().create();
         UnparsedTransaction[] unparsedTransactions = gson.fromJson(transactionsJsonString, UnparsedTransaction[].class);
@@ -62,7 +62,8 @@ public class WunderlistTransactionsProvider implements TransactionsProvider {
             int responseStatusCode = httpResponse.getStatusLine().getStatusCode();
             if (responseStatusCode != HttpStatus.SC_OK) {
                 throw new TransactionsRetrievalException("request ended with response status code different from 200. " +
-                        "The actual status code is. Check if access token is still valid." + responseStatusCode);
+                        "The actual status code is. Check if access token is still valid." + responseStatusCode +
+                        "Response body is: " + getResponseBody(httpResponse));
             }
 
             return httpResponse;
@@ -108,7 +109,7 @@ public class WunderlistTransactionsProvider implements TransactionsProvider {
         }
     }
 
-    private String getJsonString(HttpResponse httpResponse) throws TransactionsRetrievalException {
+    private String getResponseBody(HttpResponse httpResponse) throws TransactionsRetrievalException {
         try {
             return EntityUtils.toString(httpResponse.getEntity(), "UTF-8");
         } catch (IOException e) {

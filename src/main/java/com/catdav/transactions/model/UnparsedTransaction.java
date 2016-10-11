@@ -11,12 +11,16 @@ public class UnparsedTransaction {
     @SerializedName("title")
     private String value;
 
+    @SerializedName("revision")
+    private Integer revisionNumber;
+
     public UnparsedTransaction() {
     }
 
-    public UnparsedTransaction(String id, String value) {
+    public UnparsedTransaction(String id, String value, Integer revisionNumber) {
         this.id = id;
         this.value = value;
+        this.revisionNumber = revisionNumber;
     }
 
     public String getId() {
@@ -35,11 +39,20 @@ public class UnparsedTransaction {
         this.value = value;
     }
 
+    public Integer getRevisionNumber() {
+        return revisionNumber;
+    }
+
+    public void setRevisionNumber(Integer revisionNumber) {
+        this.revisionNumber = revisionNumber;
+    }
+
     @Override
     public String toString() {
-        return "Transaction{" +
+        return "UnparsedTransaction{" +
                 "id='" + id + '\'' +
                 ", value='" + value + '\'' +
+                ", revisionNumber=" + revisionNumber +
                 "}\n";
     }
 }

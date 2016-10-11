@@ -7,8 +7,8 @@ public class Transfer extends Transaction {
 
     private Account destinationAccount;
 
-    public Transfer(int value, Account sourceAccount, String description, Date date, Account destinationAccount) {
-        super(value, sourceAccount, description, date);
+    public Transfer(int revisionNumber, String id, int value, Account sourceAccount, String description, Date date, Account destinationAccount) {
+        super(revisionNumber, id, value, sourceAccount, description, date);
         this.destinationAccount = destinationAccount;
     }
 
