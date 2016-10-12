@@ -4,12 +4,16 @@ import java.util.Date;
 
 public class Transaction {
 
+    private int revisionNumber;
+    private String id;
     private int value;
     private Account sourceAccount;
     private String description;
     private Date date;
 
-    public Transaction(int value, Account sourceAccount, String description, Date date) {
+    public Transaction(int revisionNumber, String id, int value, Account sourceAccount, String description, Date date) {
+        this.revisionNumber = revisionNumber;
+        this.id = id;
         this.value = value;
         this.sourceAccount = sourceAccount;
         this.description = description;
@@ -46,5 +50,21 @@ public class Transaction {
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public int getRevisionNumber() {
+        return revisionNumber;
+    }
+
+    public void setRevisionNumber(int revisionNumber) {
+        this.revisionNumber = revisionNumber;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

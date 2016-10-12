@@ -6,8 +6,8 @@ public class AccountOperation extends Transaction {
 
     private AccountOperationType type;
 
-    public AccountOperation(int value, Account sourceAccount, String description, Date date, AccountOperationType type) {
-        super(value, sourceAccount, description, date);
+    public AccountOperation(int revisionNumber, String id, int value, Account sourceAccount, String description, Date date, AccountOperationType type) {
+        super(revisionNumber, id, value, sourceAccount, description, date);
         this.type = type;
     }
 
