@@ -1,4 +1,4 @@
-package com.catdav.transactions.bussiness.exceptions;
+package com.catdav.transactions.parser.exceptions;
 
 /**
  * Created by catalina.serbu on 10/12/2016.

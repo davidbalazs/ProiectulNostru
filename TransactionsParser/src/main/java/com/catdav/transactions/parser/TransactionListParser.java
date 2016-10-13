@@ -1,4 +1,4 @@
-package com.catdav.transactions.bussiness;
+package com.catdav.transactions.parser;
 
 import com.catdav.transactions.model.TransactionsContainer;
 

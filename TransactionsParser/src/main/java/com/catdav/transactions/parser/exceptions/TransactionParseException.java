@@ -1,6 +1,4 @@
-package com.catdav.transactions.bussiness.exceptions;
-
-import com.catdav.transactions.exceptions.GeneralException;
+package com.catdav.transactions.parser.exceptions;
 
 /**
  * Exception that should be extended by any exception thrown in main module.
