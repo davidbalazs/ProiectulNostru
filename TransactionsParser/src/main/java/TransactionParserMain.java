@@ -1,4 +1,4 @@
-import com.catdav.transactions.parser.impl.DefaultDateParser;
+import com.catdav.transactions.parser.date.impl.DefaultDateParser;
 import com.catdav.transactions.parser.exceptions.DateParseException;
 
 import java.time.LocalDate;
