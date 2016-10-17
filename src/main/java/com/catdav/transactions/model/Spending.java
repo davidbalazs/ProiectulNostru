@@ -8,8 +8,8 @@ public class Spending extends Transaction{
     private SpendingCategory category;
     private boolean addToAverage;
 
-    public Spending(int value, Account sourceAccount, String description, Date date, SpendingCategory category, boolean addToAverage) {
-        super(value, sourceAccount, description, date);
+    public Spending(int revisionNumber, String id, int value, Account sourceAccount, String description, Date date, SpendingCategory category, boolean addToAverage) {
+        super(revisionNumber, id, value, sourceAccount, description, date);
         this.category = category;
         this.addToAverage = addToAverage;
     }
