@@ -1,6 +1,6 @@
-package com.catdav.transactions.parser.date.impl;
+package com.catdav.transactions.parser.main.impl;
 
-import com.catdav.transactions.parser.TransactionListParser;
+import com.catdav.transactions.parser.main.TransactionListParser;
 import com.catdav.transactions.model.TransactionsContainer;
 
 import java.util.List;
