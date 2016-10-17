@@ -2,10 +2,10 @@ package com.catdav.transactions.parser.accounts;
 
 import com.catdav.transactions.model.Account;
 import com.catdav.transactions.providers.AccountsProvider;
+import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
-import org.apache.log4j.Logger;
 
 /**
  * dummy accounts provider-> use DefaultAccountsProvider when logged in LAN with php app
@@ -22,7 +22,8 @@ public class DevelopmentAcountsProvider implements AccountsProvider {
         accountsList.add(new Account(2,"ingcat"));
         accountsList.add(new Account(3,"bcr"));
         accountsList.add(new Account(4,"ecocat"));
-        accountsList.add(new Account(5,"ecodav"));
+        accountsList.add(new Account(4,"ecodav"));
+        accountsList.add(new Account(6,"bonuri"));
 
         return accountsList;
     }
