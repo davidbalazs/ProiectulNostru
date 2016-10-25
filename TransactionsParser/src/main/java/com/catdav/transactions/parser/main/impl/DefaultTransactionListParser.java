@@ -1,6 +1,6 @@
-package com.catdav.transactions.bussiness.impl;
+package com.catdav.transactions.parser.main.impl;
 
-import com.catdav.transactions.bussiness.TransactionListParser;
+import com.catdav.transactions.parser.main.TransactionListParser;
 import com.catdav.transactions.model.TransactionsContainer;
 
 import java.util.List;
@@ -18,7 +18,7 @@ import java.util.List;
  * PATTERN PRINCIPAL TRANSFER:         Valoare tip_operatiune cont_sursa cont-destinatie descriere data
  * -tip_operatiune = transfer
  */
-public class TransactionListParserDefault implements TransactionListParser {
+public class DefaultTransactionListParser implements TransactionListParser {
 
     public TransactionsContainer parse(List<String> transactionsToBeParsed) {
         return null;

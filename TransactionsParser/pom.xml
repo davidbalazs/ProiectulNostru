@@ -16,6 +16,11 @@
       <artifactId>TransactionsImporter</artifactId>
       <version>1.0-SNAPSHOT</version>
     </dependency>
+      <dependency>
+          <groupId>com.catdav.transactions</groupId>
+          <artifactId>TransactionsPersister</artifactId>
+          <version>1.0-SNAPSHOT</version>
+      </dependency>
   </dependencies>
 
 
