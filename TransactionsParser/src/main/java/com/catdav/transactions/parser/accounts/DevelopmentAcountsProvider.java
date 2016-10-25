@@ -17,7 +17,7 @@ public class DevelopmentAcountsProvider implements AccountsProvider {
     public List<Account> getAccounts(){
 
         LOG.error("this is a test implementation. use the real one when available");
-        ArrayList<Account> accountsList = new ArrayList<Account>();
+        ArrayList accountsList = new ArrayList<Account>();
         accountsList.add(new Account(1,"ing"));
         accountsList.add(new Account(2,"ingcat"));
         accountsList.add(new Account(3,"bcr"));

@@ -1,7 +1,7 @@
 package com.catdav.transactions.parser.exceptions;
 
 /**
- * Exception that should be extended by any exception thrown in main module.
+ *  Exception that should be thrown whenever the system fails to parse a transaction.
  */
 
 public class TransactionParseException extends Exception {

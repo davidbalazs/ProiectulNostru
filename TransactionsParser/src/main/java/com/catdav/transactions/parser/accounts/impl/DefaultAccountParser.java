@@ -14,15 +14,17 @@ public class DefaultAccountParser implements AccountParser {
 
     public Account parse(String accountToBeParsed) throws AccountParseException{
 
-        Account parsedAccount = null;
-        AccountsProvider accountProvider = new DevelopmentAcountsProvider();
         List<Account> accountsList = new ArrayList<>();
 
+        AccountsProvider accountProvider = new DevelopmentAcountsProvider();
         try {
             accountsList = accountProvider.getAccounts();
         }catch(AccountsRetrievalException are){
+            throw new AccountParseException("NULL accountsList");
 
         }
+        Account parsedAccount = null;
+
         for(Account a:accountsList){
             if(a.getName().equals(accountToBeParsed)){
                 parsedAccount = a;

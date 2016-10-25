@@ -31,5 +31,5 @@ import java.time.LocalDate;
  * Created by catalina.serbu on 10/12/2016.
  */
 public interface DateParser {
-    public LocalDate parse(String dateString) throws DateParseException;
+    LocalDate parse(String dateString) throws DateParseException;
 }

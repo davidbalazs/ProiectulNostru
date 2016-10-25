@@ -7,11 +7,11 @@ import com.catdav.transactions.parser.exceptions.DateParseException;
 import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.time.Month;
+import java.time.Year;
 
 public class DefaultDateParser implements DateParser {
 
     public LocalDate parse(String dateString) throws DateParseException {
-        //System.out.println("parse METHOD");
 
         if( dateString==null ){
             throw new DateParseException("null date string");
@@ -22,38 +22,33 @@ public class DefaultDateParser implements DateParser {
             throw new DateParseException("invalid format date :"+dateString);
         }
 
-        datesString[1] = datesString[1].toLowerCase();
+        String monthToBeParsed = datesString[1].toLowerCase();
 
         int day = parseDay(datesString[0]);
-        Month month = parseMonth(datesString[1]);
-        int year = LocalDate.now().getYear();
-
-        if(month.compareTo(LocalDate.now().getMonth()) > 0 ){
-            year = year - 1;
-        }
+        Month month = parseMonth(monthToBeParsed);
+        int year = resolveYear(month);
 
         LocalDate date = LocalDate.now();
 
         try {
             date = LocalDate.of(year, month, day);
         }catch(DateTimeException dte){
-            throw new DateParseException("invalid date:"+dateString);
+            throw new DateParseException("invalid date:"+dateString+dte);
         }
 
      return date;
     }
 
-    public int parseDay(String dayString) throws DateParseException {
+    private int parseDay(String dayToBeParsed) throws DateParseException {
 
-        //System.out.println("parseDay METHOD");
         int day = 0;
         //if dateString: 1a aug or 12aug=> datesString[]={12aug}
 
         try {
-            day = Integer.parseInt(dayString);
+            day = Integer.parseInt(dayToBeParsed);
 
         }catch(NumberFormatException e){
-            throw new DateParseException("invalid day:"+dayString);
+            throw new DateParseException("invalid day:"+dayToBeParsed+e);
         }
 
         if( (day<=0) || (day>31) ){
@@ -63,12 +58,11 @@ public class DefaultDateParser implements DateParser {
         return day;
      }
 
-    public Month parseMonth(String monthString) throws DateParseException {
-        //System.out.println("parseMonth METHOD");
+    private Month parseMonth(String monthToBeParsed) throws DateParseException {
 
         Month resultedMonth = null;
 
-        switch (monthString) {
+        switch (monthToBeParsed) {
             case "ian":
             case "ianuarie": {
                 resultedMonth = Month.JANUARY;
@@ -129,10 +123,22 @@ public class DefaultDateParser implements DateParser {
                 break;
             }
             default: {
-                throw new DateParseException("month invalid:" + monthString);
+                throw new DateParseException("invalid month: " + monthToBeParsed);
             }
         }
 
         return resultedMonth;
+    }
+
+    private int resolveYear(Month month){
+
+        int year = LocalDate.now().getYear();
+
+        if(month.compareTo(LocalDate.now().getMonth()) > 0 ){
+            year = year - 1;
+        }
+
+        return year;
+
     }
 }
